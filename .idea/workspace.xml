@@ -81,7 +81,7 @@
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
-    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
+    "settings.editor.selected.configurable": "vcs.Mercurial",
     "spring.configuration.checksum": "61adab9dd226dedab15411bfd7a093ba"
   }
 }]]></component>
@@ -268,7 +268,7 @@
       <workItem from="1659596719255" duration="2139000" />
       <workItem from="1659601574829" duration="9497000" />
       <workItem from="1659615781495" duration="1872000" />
-      <workItem from="1659618991326" duration="2030000" />
+      <workItem from="1659618991326" duration="2212000" />
     </task>
     <task id="LOCAL-00001" summary="Changes">
       <created>1659617573368</created>
@@ -284,7 +284,14 @@
       <option name="project" value="LOCAL" />
       <updated>1659620858320</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Changes">
+      <created>1659621178782</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1659621178782</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
