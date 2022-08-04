@@ -1,0 +1,442 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="GROUP_BY_SEVERITY" value="true" />
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="ec1299b6-fbc9-4657-9f93-74fe9eb13faf" name="Changes" comment="Changes">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/smartfox_info.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SSM.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mybatis-resultMap/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mybatis-resultMap/src/main/java/com/atguigu/mybatis/mapper/DeptMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mybatis-resultMap/src/main/java/com/atguigu/mybatis/mapper/EmpMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mybatis-resultMap/src/main/java/com/atguigu/mybatis/pojo/Dept.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mybatis-resultMap/src/main/java/com/atguigu/mybatis/pojo/Emp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mybatis-resultMap/src/main/java/com/atguigu/mybatis/utils/SqlSessionUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mybatis-resultMap/src/main/resources/com/atguigu/mybatis/mapper/DeptMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mybatis-resultMap/src/main/resources/com/atguigu/mybatis/mapper/EmpMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mybatis-resultMap/src/main/resources/jdbc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mybatis-resultMap/src/main/resources/log4j.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mybatis-resultMap/src/main/resources/mybatis-config.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mybatis-resultMap/src/test/java/ResultMapTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mybatis.cache/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mybatis.cache/src/main/java/com/atguigu/mybatis/mapper/CachMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mybatis.cache/src/main/java/com/atguigu/mybatis/pojo/Emp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mybatis.cache/src/main/java/com/atguigu/mybatis/utils/SqlSessionUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mybatis.cache/src/main/resources/com/atguigu/mybatis/mapper/CachMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mybatis.cache/src/main/resources/ehcache.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mybatis.cache/src/main/resources/jdbc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mybatis.cache/src/main/resources/log4j.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mybatis.cache/src/main/resources/logback.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mybatis.cache/src/main/resources/mybatis-config.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mybatis.cache/src/test/java/CachMapperTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mybatis_dynamicSQL/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mybatis_dynamicSQL/src/main/java/com/atguigu/mybatis/mapper/DynamicSQLMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mybatis_dynamicSQL/src/main/java/com/atguigu/mybatis/pojo/Emp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mybatis_dynamicSQL/src/main/java/com/atguigu/mybatis/utils/SqlSessionUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mybatis_dynamicSQL/src/main/resources/com/atguigu/mybatis/mapper/DynamicSQLMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mybatis_dynamicSQL/src/main/resources/jdbc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mybatis_dynamicSQL/src/main/resources/log4j.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mybatis_dynamicSQL/src/main/resources/mybatis-config.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mybatis_dynamicSQL/src/test/java/com/atguigu/mybatis/test/DynamicMapperTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mybatis_helloworld/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mybatis_helloworld/src/main/java/com/atguigu/mybatis/mapper/UserMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mybatis_helloworld/src/main/java/com/atguigu/mybatis/pojo/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mybatis_helloworld/src/main/java/com/atguigu/mybatis/utils/SqlSessionUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mybatis_helloworld/src/main/resources/com/atguigu/mybatis/mapper/UserMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mybatis_helloworld/src/main/resources/jdbc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mybatis_helloworld/src/main/resources/log4j.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mybatis_helloworld/src/main/resources/mybatis-config.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mybatis_helloworld/src/test/java/com/atguigu/mybatis/test/MyBatisTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mybatis_mbg/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mybatis_mbg/src/main/java/com/atguigu/mybatis/utils/SqlSessionUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mybatis_mbg/src/main/resources/generatorConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mybatis_mbg/src/main/resources/jdbc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mybatis_mbg/src/main/resources/log4j.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mybatis_mbg/src/main/resources/mybatis-config.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mybatis_mbg/src/test/java/com/atguigu/mybatis/test/MBGTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mybatis_mbg/src/test/java/com/atguigu/mybatis/test/PageTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mybatis_parameter/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mybatis_parameter/src/main/java/com/atguigu/mybatis/mapper/SelectMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mybatis_parameter/src/main/java/com/atguigu/mybatis/mapper/SpecialSQLMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mybatis_parameter/src/main/java/com/atguigu/mybatis/mapper/UserMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mybatis_parameter/src/main/java/com/atguigu/mybatis/pojo/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mybatis_parameter/src/main/java/com/atguigu/mybatis/utils/SqlSessionUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mybatis_parameter/src/main/resources/com/atguigu/mybatis/mapper/SelectMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mybatis_parameter/src/main/resources/com/atguigu/mybatis/mapper/SpecialSQLMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mybatis_parameter/src/main/resources/com/atguigu/mybatis/mapper/UserMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mybatis_parameter/src/main/resources/jdbc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mybatis_parameter/src/main/resources/log4j.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mybatis_parameter/src/main/resources/mybatis-config.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mybatis_parameter/src/test/java/com/atguigu/mybatis/test/ParameterTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mybatis_parameter/src/test/java/com/atguigu/mybatis/test/SelectMapperTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mybatis_parameter/src/test/java/com/atguigu/mybatis/test/SpecialSQLMapperTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-aop/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-aop/src/main/java/com/atguigu/spring/aop/annotation/Calculator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-aop/src/main/java/com/atguigu/spring/aop/annotation/CalculatorImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-aop/src/main/java/com/atguigu/spring/aop/annotation/LoggerAspect.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-aop/src/main/java/com/atguigu/spring/aop/annotation/ValidateAspect.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-aop/src/main/java/com/atguigu/spring/aop/xml/Calculator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-aop/src/main/java/com/atguigu/spring/aop/xml/CalculatorImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-aop/src/main/java/com/atguigu/spring/aop/xml/LoggerAspect.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-aop/src/main/java/com/atguigu/spring/aop/xml/ValidateAspect.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-aop/src/main/resources/aop-annotation.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-aop/src/test/java/com/atguigu/spring/test/AopTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-proxy/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-proxy/src/main/java/com/atguigu/spring/proxy/Calculator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-proxy/src/main/java/com/atguigu/spring/proxy/CalculatorImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-proxy/src/main/java/com/atguigu/spring/proxy/CalculatorStaticProxy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-proxy/src/main/java/com/atguigu/spring/proxy/ProxyFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-proxy/src/test/java/com/atguigu/proxy/ProxyTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-transaction/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-transaction/src/main/java/com/atguigu/spring/Controller/BookController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-transaction/src/main/java/com/atguigu/spring/dao/BookDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-transaction/src/main/java/com/atguigu/spring/dao/impl/BookDaoImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-transaction/src/main/java/com/atguigu/spring/pojo/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-transaction/src/main/java/com/atguigu/spring/service/BookService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-transaction/src/main/java/com/atguigu/spring/service/CheckoutService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-transaction/src/main/java/com/atguigu/spring/service/impl/BookServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-transaction/src/main/java/com/atguigu/spring/service/impl/CheckoutServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-transaction/src/main/resources/jdbc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-transaction/src/main/resources/spring-jdbc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-transaction/src/main/resources/tx-annotation.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-transaction/src/test/java/com/atguigu/spring/test/TxByAnnotationTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-transaction/src/test/java/com/atguigu/spring/test/jdbcTemplateTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring_hellword/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring_hellword/src/main/java/com/atguigu/spring/pojo/HelloWorld.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring_hellword/src/main/resources/applicationContext.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring_hellword/src/test/java/com/atguigu/spring/test/HelloWorldTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring_ioc_annotation/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring_ioc_annotation/src/main/java/com/atguigu/spring/controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring_ioc_annotation/src/main/java/com/atguigu/spring/dao/UserDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring_ioc_annotation/src/main/java/com/atguigu/spring/dao/impl/UserDaoImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring_ioc_annotation/src/main/java/com/atguigu/spring/service/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring_ioc_annotation/src/main/java/com/atguigu/spring/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring_ioc_annotation/src/main/resources/spring-ioc-annotation.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring_ioc_annotation/src/test/java/com/atguigu/spring/test/IOCByAnnotationTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring_ioc_xml/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring_ioc_xml/src/main/java/UserServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring_ioc_xml/src/main/java/com/atguigu/spring/controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring_ioc_xml/src/main/java/com/atguigu/spring/dao/UserDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring_ioc_xml/src/main/java/com/atguigu/spring/dao/impl/UserDaoImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring_ioc_xml/src/main/java/com/atguigu/spring/factory/UserFactoryBean.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring_ioc_xml/src/main/java/com/atguigu/spring/pojo/Clazz.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring_ioc_xml/src/main/java/com/atguigu/spring/pojo/Person.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring_ioc_xml/src/main/java/com/atguigu/spring/pojo/Student.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring_ioc_xml/src/main/java/com/atguigu/spring/pojo/Teacher.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring_ioc_xml/src/main/java/com/atguigu/spring/pojo/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring_ioc_xml/src/main/java/com/atguigu/spring/process/MyBeanPostProcessor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring_ioc_xml/src/main/java/com/atguigu/spring/service/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring_ioc_xml/src/main/java/com/atguigu/spring/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring_ioc_xml/src/main/resources/jdbc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring_ioc_xml/src/main/resources/spring-autowire-xml.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring_ioc_xml/src/main/resources/spring-datasource.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring_ioc_xml/src/main/resources/spring-factory.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring_ioc_xml/src/main/resources/spring-ioc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring_ioc_xml/src/main/resources/spring-lifecycle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring_ioc_xml/src/main/resources/spring-scope.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring_ioc_xml/src/test/java/com/atguigu/spring/test/AutowireByXMLTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring_ioc_xml/src/test/java/com/atguigu/spring/test/DataSourceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring_ioc_xml/src/test/java/com/atguigu/spring/test/FactoryBeanTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring_ioc_xml/src/test/java/com/atguigu/spring/test/IOCBXMLTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring_ioc_xml/src/test/java/com/atguigu/spring/test/LifeCycleTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring_ioc_xml/src/test/java/com/atguigu/spring/test/ScopeTest.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="mybatis-mapper" />
+        <option value="FxmlFile" />
+        <option value="mybatis-config" />
+        <option value="package.json" />
+        <option value="spring-beans.schema" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="jar://C:/Program Files/Java/jdk1.8.0_131/src.zip!/java/lang/reflect/Proxy.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/mybatis_parameter/src/main/resources/com/atguigu/mybatis/mapper/SpecialSQLMapper.xml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/spring_ioc_xml/src/main/resources/spring-ioc.xml" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="D:\Server\maven\apache-maven-3.8.6\repository" />
+        <option name="mavenHome" value="$PROJECT_DIR$/../../Server/maven/apache-maven-3.8.6" />
+        <option name="userSettingsFile" value="D:\Server\maven\apache-maven-3.8.6\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="downloadDocsAutomatically" value="true" />
+        <option name="downloadSourcesAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="MavenRunner">
+    <option name="skipTests" value="true" />
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="2" />
+  </component>
+  <component name="ProjectId" id="2CA60L5bOPVUhHuSpq4kHNnU96Z" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="autoscrollToSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "WebServerToolWindowFactoryState": "false",
+    "jdk.selected.JAVA_MODULE": "1.8",
+    "last_opened_file_path": "D:/IDEA workspace/SSM/spring-transaction/src/main/resources",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
+    "spring.configuration.checksum": "61adab9dd226dedab15411bfd7a093ba"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\IDEA workspace\SSM\spring-transaction\src\main\resources" />
+      <recent name="D:\IDEA workspace\SSM\spring-aop\src\main\java\com\atguigu\spring\aop\xml" />
+      <recent name="D:\IDEA workspace\SSM\spring-aop\src\main\java\com\atguigu\spring\aop" />
+      <recent name="D:\IDEA workspace\SSM\mybatis_mbg\src\main\resources" />
+      <recent name="D:\IDEA workspace\SSM\mybatis.cache\src\main\resources" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\IDEA workspace\SSM\mybatis_dynamicSQL\src\main\resources" />
+      <recent name="D:\IDEA workspace\SSM\mybatis_helloworld\src\main\resources\com\atguigu\mybatis\mapper" />
+      <recent name="D:\IDEA workspace\SSM\mybatis_helloworld\src\main\resources" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.atguigu.mybatis.utils" />
+      <recent name="com.atguigu.mybatis.pojo" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.TxByAnnotationTest.testGetUserById">
+    <configuration name="TxByAnnotationTest.testGetUserById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="spring-transaction" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.atguigu.spring.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.atguigu.spring.test" />
+      <option name="MAIN_CLASS_NAME" value="com.atguigu.spring.test.TxByAnnotationTest" />
+      <option name="METHOD_NAME" value="testGetUserById" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="jdbcTemplateTest.testGetAllUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="spring-transaction" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.atguigu.spring.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.atguigu.spring.test" />
+      <option name="MAIN_CLASS_NAME" value="com.atguigu.spring.test.jdbcTemplateTest" />
+      <option name="METHOD_NAME" value="testGetAllUser" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="jdbcTemplateTest.testGetCount" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="spring-transaction" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.atguigu.spring.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.atguigu.spring.test" />
+      <option name="MAIN_CLASS_NAME" value="com.atguigu.spring.test.jdbcTemplateTest" />
+      <option name="METHOD_NAME" value="testGetCount" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="jdbcTemplateTest.testGetUserById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="spring-transaction" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.atguigu.spring.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.atguigu.spring.test" />
+      <option name="MAIN_CLASS_NAME" value="com.atguigu.spring.test.jdbcTemplateTest" />
+      <option name="METHOD_NAME" value="testGetUserById" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="jdbcTemplateTest.testInsert" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="spring-transaction" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.atguigu.spring.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.atguigu.spring.test" />
+      <option name="MAIN_CLASS_NAME" value="com.atguigu.spring.test.jdbcTemplateTest" />
+      <option name="METHOD_NAME" value="testInsert" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.TxByAnnotationTest.testGetUserById" />
+        <item itemvalue="JUnit.jdbcTemplateTest.testGetCount" />
+        <item itemvalue="JUnit.jdbcTemplateTest.testGetAllUser" />
+        <item itemvalue="JUnit.jdbcTemplateTest.testGetUserById" />
+        <item itemvalue="JUnit.jdbcTemplateTest.testInsert" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration>C:\Users\MC\AppData\Roaming\Subversion</configuration>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ec1299b6-fbc9-4657-9f93-74fe9eb13faf" name="Changes" comment="" />
+      <created>1658232820308</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1658232820308</updated>
+      <workItem from="1658232822493" duration="3583000" />
+      <workItem from="1658277559917" duration="360000" />
+      <workItem from="1658283038591" duration="2753000" />
+      <workItem from="1658300637598" duration="3155000" />
+      <workItem from="1658313006552" duration="8639000" />
+      <workItem from="1658369351406" duration="1951000" />
+      <workItem from="1658389999698" duration="821000" />
+      <workItem from="1658398709409" duration="9398000" />
+      <workItem from="1658459794292" duration="1766000" />
+      <workItem from="1658468517057" duration="397000" />
+      <workItem from="1658478720022" duration="14348000" />
+      <workItem from="1658642444657" duration="10837000" />
+      <workItem from="1658662262838" duration="37000" />
+      <workItem from="1658662316031" duration="5964000" />
+      <workItem from="1658717932417" duration="2545000" />
+      <workItem from="1658744503746" duration="9458000" />
+      <workItem from="1658800996288" duration="3459000" />
+      <workItem from="1658888373682" duration="1598000" />
+      <workItem from="1658894175951" duration="2103000" />
+      <workItem from="1658896657578" duration="186000" />
+      <workItem from="1658906029378" duration="1785000" />
+      <workItem from="1658920453431" duration="5622000" />
+      <workItem from="1658974178070" duration="2876000" />
+      <workItem from="1658991010150" duration="3531000" />
+      <workItem from="1658999692317" duration="165000" />
+      <workItem from="1659010316213" duration="2325000" />
+      <workItem from="1659060305876" duration="2202000" />
+      <workItem from="1659068473542" duration="1043000" />
+      <workItem from="1659078366660" duration="4474000" />
+      <workItem from="1659090347683" duration="9115000" />
+      <workItem from="1659167181242" duration="3033000" />
+      <workItem from="1659268195096" duration="2533000" />
+      <workItem from="1659270747878" duration="275000" />
+      <workItem from="1659271037713" duration="224000" />
+      <workItem from="1659271275482" duration="207000" />
+      <workItem from="1659271527681" duration="145000" />
+      <workItem from="1659271684810" duration="43000" />
+      <workItem from="1659271738776" duration="31000" />
+      <workItem from="1659271781307" duration="108000" />
+      <workItem from="1659272249093" duration="310000" />
+      <workItem from="1659272575250" duration="476000" />
+      <workItem from="1659273072980" duration="1830000" />
+      <workItem from="1659277288608" duration="786000" />
+      <workItem from="1659315601267" duration="622000" />
+      <workItem from="1659328155029" duration="105000" />
+      <workItem from="1659328274150" duration="123000" />
+      <workItem from="1659336227434" duration="5452000" />
+      <workItem from="1659349705652" duration="9126000" />
+      <workItem from="1659406826540" duration="71000" />
+      <workItem from="1659406916336" duration="232000" />
+      <workItem from="1659407162007" duration="1361000" />
+      <workItem from="1659424284457" duration="2179000" />
+      <workItem from="1659430986780" duration="4364000" />
+      <workItem from="1659436885446" duration="620000" />
+      <workItem from="1659438632167" duration="665000" />
+      <workItem from="1659439313605" duration="3841000" />
+      <workItem from="1659521486132" duration="57000" />
+      <workItem from="1659521574586" duration="3000" />
+      <workItem from="1659578571854" duration="2253000" />
+      <workItem from="1659586905750" duration="1091000" />
+      <workItem from="1659596719255" duration="2139000" />
+      <workItem from="1659601574829" duration="9497000" />
+      <workItem from="1659615781495" duration="1320000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
