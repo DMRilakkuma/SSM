@@ -1,0 +1,482 @@
+Index: spring-transaction/src/test/java/com/atguigu/spring/test/TxByXMLTest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/spring-transaction/src/test/java/com/atguigu/spring/test/TxByXMLTest.java b/spring-transaction/src/test/java/com/atguigu/spring/test/TxByXMLTest.java
+new file mode 100644
+--- /dev/null	(date 1659674913603)
++++ b/spring-transaction/src/test/java/com/atguigu/spring/test/TxByXMLTest.java	(date 1659674913603)
+@@ -0,0 +1,41 @@
++package com.atguigu.spring.test;
++
++import com.atguigu.spring.Controller.BookController;
++import org.junit.Test;
++import org.junit.runner.RunWith;
++import org.springframework.beans.factory.annotation.Autowired;
++import org.springframework.test.context.ContextConfiguration;
++import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
++
++/**
++ * @author: MC
++ * @program: SSM
++ * @create: 2022-08-04 16:55
++ * @Description:
++ * 声明式事务的配置步骤
++ * 1.在spring的配置文件中配置事务管理器
++ * 2.开启事务的注解驱动
++ * 在被需要事务管理的方法上，添加Transactional注解，该方法就会被事务管理
++ * @Transactional注解标识的位置
++ * 1.标识在方法上
++ * 2，标识在类上，则类中所有的方法都会被事务管理
++ */
++
++@RunWith(SpringJUnit4ClassRunner.class)
++@ContextConfiguration("classpath:tx-xml.xml")
++public class TxByXMLTest{
++
++    @Autowired
++    private BookController bookController;
++
++    @Test
++    public void testGetUserById(){
++        bookController.buyBook(1,1);
++    }
++
++    @Test
++    public void tesByBook(){
++        bookController.checkout(1,new Integer[]{1,2});
++    }
++
++}
+\ No newline at end of file
+Index: spring-transaction/src/main/resources/tx-xml.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/spring-transaction/src/main/resources/tx-xml.xml b/spring-transaction/src/main/resources/tx-xml.xml
+new file mode 100644
+--- /dev/null	(date 1659675572888)
++++ b/spring-transaction/src/main/resources/tx-xml.xml	(date 1659675572888)
+@@ -0,0 +1,46 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<beans xmlns="http://www.springframework.org/schema/beans"
++       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
++       xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
++       xmlns:aop="http://www.springframework.org/schema/aop"
++       xsi:schemaLocation="http://www.springframework.org/schema/beans
++       http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd http://www.springframework.org/schema/aop https://www.springframework.org/schema/aop/spring-aop.xsd">
++
++    <!--扫描组件-->
++    <context:component-scan base-package="com.atguigu.spring"/>
++
++    <!--引入jdbc.properties-->
++    <context:property-placeholder location="classpath:jdbc.properties"/>
++
++    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
++        <property name="driverClassName" value="${jdbc.driver}"/>
++        <property name="url" value="${jdbc.url}"></property>
++        <property name="username" value="${jdbc.username}"></property>
++        <property name="password" value="${jdbc.password}"></property>
++    </bean>
++
++    <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
++        <property name="dataSource" ref="dataSource"></property>
++    </bean>
++
++    <!--配置事务管理器-->
++    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
++        <property name="dataSource" ref="dataSource"></property>
++    </bean>
++
++    <!--开启事务的注解驱动
++    <tx:annotation-driven transaction-manager="transactionManager"/>-->
++
++    <!-- 配置事务通知-->
++    <tx:advice id="tx" transaction-manager="transactionManager">
++        <tx:attributes>
++            <tx:method name="buyBooks"/>
++            <tx:method name="*"/>
++        </tx:attributes>
++    </tx:advice>
++
++    <aop:config>
++        <aop:advisor advice-ref="tx" pointcut="execution(* com.atguigu.spring.service.impl.*.*(..))"/>
++    </aop:config>
++
++</beans>
+\ No newline at end of file
+Index: spring-transaction/src/test/java/com/atguigu/spring/test/TxByAnnotationTest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.atguigu.spring.test;\r\n\r\nimport com.atguigu.spring.Controller.BookController;\r\nimport org.junit.Test;\r\nimport org.junit.runner.RunWith;\r\nimport org.springframework.beans.factory.annotation.Autowired;\r\nimport org.springframework.test.context.ContextConfiguration;\r\nimport org.springframework.test.context.junit4.SpringJUnit4ClassRunner;\r\n\r\n/**\r\n * @author: MC\r\n * @program: SSM\r\n * @create: 2022-08-04 16:55\r\n * @Description:\r\n * 声明式事务的配置步骤\r\n * 1.在spring的配置文件中配置事务管理器\r\n * 2.开启事务的注解驱动\r\n * 在被需要事务管理的方法上，添加Transactional注解，该方法就会被事务管理\r\n * @Transactional注解标识的位置\r\n * 1.标识在方法上\r\n * 2，标识在类上，则类中所有的方法都会被事务管理\r\n */\r\n\r\n@RunWith(SpringJUnit4ClassRunner.class)\r\n@ContextConfiguration(\"classpath:tx-annotation.xml\")\r\npublic class TxByAnnotationTest {\r\n\r\n    @Autowired\r\n    private BookController bookController;\r\n\r\n    @Test\r\n    public void testGetUserById(){\r\n        bookController.buyBook(1,1);\r\n    }\r\n\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/spring-transaction/src/test/java/com/atguigu/spring/test/TxByAnnotationTest.java b/spring-transaction/src/test/java/com/atguigu/spring/test/TxByAnnotationTest.java
+--- a/spring-transaction/src/test/java/com/atguigu/spring/test/TxByAnnotationTest.java	(revision 8efdcaca528b7a440c8283b0473f4aab1620eda2)
++++ b/spring-transaction/src/test/java/com/atguigu/spring/test/TxByAnnotationTest.java	(date 1659673820961)
+@@ -33,4 +33,9 @@
+         bookController.buyBook(1,1);
+     }
+ 
++    @Test
++    public void tesByBook(){
++        bookController.checkout(1,new Integer[]{1,2});
++    }
++
+ }
+\ No newline at end of file
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AnalysisUIOptions\">\r\n    <option name=\"GROUP_BY_SEVERITY\" value=\"true\" />\r\n  </component>\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"ec1299b6-fbc9-4657-9f93-74fe9eb13faf\" name=\"Changes\" comment=\"Changes\" />\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"CodeStyleSettingsInfer\">\r\n    <option name=\"done\" value=\"true\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"mybatis-mapper\" />\r\n        <option value=\"FxmlFile\" />\r\n        <option value=\"mybatis-config\" />\r\n        <option value=\"package.json\" />\r\n        <option value=\"spring-beans.schema\" />\r\n        <option value=\"Interface\" />\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n    <option name=\"UPDATE_TYPE\" value=\"REBASE\" />\r\n  </component>\r\n  <component name=\"HighlightingSettingsPerFile\">\r\n    <setting file=\"jar://C:/Program Files/Java/jdk1.8.0_131/src.zip!/java/lang/reflect/Proxy.java\" root0=\"SKIP_INSPECTION\" />\r\n    <setting file=\"file://$PROJECT_DIR$/mybatis_parameter/src/main/resources/com/atguigu/mybatis/mapper/SpecialSQLMapper.xml\" root0=\"FORCE_HIGHLIGHTING\" />\r\n    <setting file=\"file://$PROJECT_DIR$/spring_ioc_xml/src/main/resources/spring-ioc.xml\" root0=\"FORCE_HIGHLIGHTING\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"MavenImportPreferences\">\r\n    <option name=\"generalSettings\">\r\n      <MavenGeneralSettings>\r\n        <option name=\"localRepository\" value=\"D:\\Server\\maven\\apache-maven-3.8.6\\repository\" />\r\n        <option name=\"mavenHome\" value=\"$PROJECT_DIR$/../../Server/maven/apache-maven-3.8.6\" />\r\n        <option name=\"userSettingsFile\" value=\"D:\\Server\\maven\\apache-maven-3.8.6\\conf\\settings.xml\" />\r\n      </MavenGeneralSettings>\r\n    </option>\r\n    <option name=\"importingSettings\">\r\n      <MavenImportingSettings>\r\n        <option name=\"downloadDocsAutomatically\" value=\"true\" />\r\n        <option name=\"downloadSourcesAutomatically\" value=\"true\" />\r\n      </MavenImportingSettings>\r\n    </option>\r\n  </component>\r\n  <component name=\"MavenRunner\">\r\n    <option name=\"skipTests\" value=\"true\" />\r\n  </component>\r\n  <component name=\"ProjectCodeStyleSettingsMigration\">\r\n    <option name=\"version\" value=\"2\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2CA60L5bOPVUhHuSpq4kHNnU96Z\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\">\r\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"autoscrollToSource\" value=\"true\" />\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n    <option name=\"showMembers\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,\r\n    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;1.8&quot;,\r\n    &quot;last_opened_file_path&quot;: &quot;D:/IDEA workspace/SSM&quot;,\r\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Mercurial&quot;,\r\n    &quot;spring.configuration.checksum&quot;: &quot;61adab9dd226dedab15411bfd7a093ba&quot;\r\n  }\r\n}</component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CopyFile.RECENT_KEYS\">\r\n      <recent name=\"D:\\IDEA workspace\\SSM\\spring-transaction\\src\\main\\resources\" />\r\n      <recent name=\"D:\\IDEA workspace\\SSM\\spring-aop\\src\\main\\java\\com\\atguigu\\spring\\aop\\xml\" />\r\n      <recent name=\"D:\\IDEA workspace\\SSM\\spring-aop\\src\\main\\java\\com\\atguigu\\spring\\aop\" />\r\n      <recent name=\"D:\\IDEA workspace\\SSM\\mybatis_mbg\\src\\main\\resources\" />\r\n      <recent name=\"D:\\IDEA workspace\\SSM\\mybatis.cache\\src\\main\\resources\" />\r\n    </key>\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"D:\\IDEA workspace\\SSM\\mybatis_dynamicSQL\\src\\main\\resources\" />\r\n      <recent name=\"D:\\IDEA workspace\\SSM\\mybatis_helloworld\\src\\main\\resources\\com\\atguigu\\mybatis\\mapper\" />\r\n      <recent name=\"D:\\IDEA workspace\\SSM\\mybatis_helloworld\\src\\main\\resources\" />\r\n    </key>\r\n    <key name=\"CopyClassDialog.RECENTS_KEY\">\r\n      <recent name=\"com.atguigu.mybatis.utils\" />\r\n      <recent name=\"com.atguigu.mybatis.pojo\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\" selected=\"JUnit.TxByAnnotationTest.testGetUserById\">\r\n    <configuration name=\"TxByAnnotationTest.testGetUserById\" type=\"JUnit\" factoryName=\"JUnit\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"spring-transaction\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"com.atguigu.spring.test.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <option name=\"PACKAGE_NAME\" value=\"com.atguigu.spring.test\" />\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"com.atguigu.spring.test.TxByAnnotationTest\" />\r\n      <option name=\"METHOD_NAME\" value=\"testGetUserById\" />\r\n      <option name=\"TEST_OBJECT\" value=\"method\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"jdbcTemplateTest.testGetAllUser\" type=\"JUnit\" factoryName=\"JUnit\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"spring-transaction\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"com.atguigu.spring.test.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <option name=\"PACKAGE_NAME\" value=\"com.atguigu.spring.test\" />\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"com.atguigu.spring.test.jdbcTemplateTest\" />\r\n      <option name=\"METHOD_NAME\" value=\"testGetAllUser\" />\r\n      <option name=\"TEST_OBJECT\" value=\"method\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"jdbcTemplateTest.testGetCount\" type=\"JUnit\" factoryName=\"JUnit\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"spring-transaction\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"com.atguigu.spring.test.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <option name=\"PACKAGE_NAME\" value=\"com.atguigu.spring.test\" />\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"com.atguigu.spring.test.jdbcTemplateTest\" />\r\n      <option name=\"METHOD_NAME\" value=\"testGetCount\" />\r\n      <option name=\"TEST_OBJECT\" value=\"method\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"jdbcTemplateTest.testGetUserById\" type=\"JUnit\" factoryName=\"JUnit\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"spring-transaction\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"com.atguigu.spring.test.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <option name=\"PACKAGE_NAME\" value=\"com.atguigu.spring.test\" />\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"com.atguigu.spring.test.jdbcTemplateTest\" />\r\n      <option name=\"METHOD_NAME\" value=\"testGetUserById\" />\r\n      <option name=\"TEST_OBJECT\" value=\"method\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"jdbcTemplateTest.testInsert\" type=\"JUnit\" factoryName=\"JUnit\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"spring-transaction\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"com.atguigu.spring.test.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <option name=\"PACKAGE_NAME\" value=\"com.atguigu.spring.test\" />\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"com.atguigu.spring.test.jdbcTemplateTest\" />\r\n      <option name=\"METHOD_NAME\" value=\"testInsert\" />\r\n      <option name=\"TEST_OBJECT\" value=\"method\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"JUnit.TxByAnnotationTest.testGetUserById\" />\r\n        <item itemvalue=\"JUnit.jdbcTemplateTest.testGetCount\" />\r\n        <item itemvalue=\"JUnit.jdbcTemplateTest.testGetAllUser\" />\r\n        <item itemvalue=\"JUnit.jdbcTemplateTest.testGetUserById\" />\r\n        <item itemvalue=\"JUnit.jdbcTemplateTest.testInsert\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"SvnConfiguration\">\r\n    <configuration>C:\\Users\\MC\\AppData\\Roaming\\Subversion</configuration>\r\n  </component>\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"ec1299b6-fbc9-4657-9f93-74fe9eb13faf\" name=\"Changes\" comment=\"\" />\r\n      <created>1658232820308</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1658232820308</updated>\r\n      <workItem from=\"1658232822493\" duration=\"3583000\" />\r\n      <workItem from=\"1658277559917\" duration=\"360000\" />\r\n      <workItem from=\"1658283038591\" duration=\"2753000\" />\r\n      <workItem from=\"1658300637598\" duration=\"3155000\" />\r\n      <workItem from=\"1658313006552\" duration=\"8639000\" />\r\n      <workItem from=\"1658369351406\" duration=\"1951000\" />\r\n      <workItem from=\"1658389999698\" duration=\"821000\" />\r\n      <workItem from=\"1658398709409\" duration=\"9398000\" />\r\n      <workItem from=\"1658459794292\" duration=\"1766000\" />\r\n      <workItem from=\"1658468517057\" duration=\"397000\" />\r\n      <workItem from=\"1658478720022\" duration=\"14348000\" />\r\n      <workItem from=\"1658642444657\" duration=\"10837000\" />\r\n      <workItem from=\"1658662262838\" duration=\"37000\" />\r\n      <workItem from=\"1658662316031\" duration=\"5964000\" />\r\n      <workItem from=\"1658717932417\" duration=\"2545000\" />\r\n      <workItem from=\"1658744503746\" duration=\"9458000\" />\r\n      <workItem from=\"1658800996288\" duration=\"3459000\" />\r\n      <workItem from=\"1658888373682\" duration=\"1598000\" />\r\n      <workItem from=\"1658894175951\" duration=\"2103000\" />\r\n      <workItem from=\"1658896657578\" duration=\"186000\" />\r\n      <workItem from=\"1658906029378\" duration=\"1785000\" />\r\n      <workItem from=\"1658920453431\" duration=\"5622000\" />\r\n      <workItem from=\"1658974178070\" duration=\"2876000\" />\r\n      <workItem from=\"1658991010150\" duration=\"3531000\" />\r\n      <workItem from=\"1658999692317\" duration=\"165000\" />\r\n      <workItem from=\"1659010316213\" duration=\"2325000\" />\r\n      <workItem from=\"1659060305876\" duration=\"2202000\" />\r\n      <workItem from=\"1659068473542\" duration=\"1043000\" />\r\n      <workItem from=\"1659078366660\" duration=\"4474000\" />\r\n      <workItem from=\"1659090347683\" duration=\"9115000\" />\r\n      <workItem from=\"1659167181242\" duration=\"3033000\" />\r\n      <workItem from=\"1659268195096\" duration=\"2533000\" />\r\n      <workItem from=\"1659270747878\" duration=\"275000\" />\r\n      <workItem from=\"1659271037713\" duration=\"224000\" />\r\n      <workItem from=\"1659271275482\" duration=\"207000\" />\r\n      <workItem from=\"1659271527681\" duration=\"145000\" />\r\n      <workItem from=\"1659271684810\" duration=\"43000\" />\r\n      <workItem from=\"1659271738776\" duration=\"31000\" />\r\n      <workItem from=\"1659271781307\" duration=\"108000\" />\r\n      <workItem from=\"1659272249093\" duration=\"310000\" />\r\n      <workItem from=\"1659272575250\" duration=\"476000\" />\r\n      <workItem from=\"1659273072980\" duration=\"1830000\" />\r\n      <workItem from=\"1659277288608\" duration=\"786000\" />\r\n      <workItem from=\"1659315601267\" duration=\"622000\" />\r\n      <workItem from=\"1659328155029\" duration=\"105000\" />\r\n      <workItem from=\"1659328274150\" duration=\"123000\" />\r\n      <workItem from=\"1659336227434\" duration=\"5452000\" />\r\n      <workItem from=\"1659349705652\" duration=\"9126000\" />\r\n      <workItem from=\"1659406826540\" duration=\"71000\" />\r\n      <workItem from=\"1659406916336\" duration=\"232000\" />\r\n      <workItem from=\"1659407162007\" duration=\"1361000\" />\r\n      <workItem from=\"1659424284457\" duration=\"2179000\" />\r\n      <workItem from=\"1659430986780\" duration=\"4364000\" />\r\n      <workItem from=\"1659436885446\" duration=\"620000\" />\r\n      <workItem from=\"1659438632167\" duration=\"665000\" />\r\n      <workItem from=\"1659439313605\" duration=\"3841000\" />\r\n      <workItem from=\"1659521486132\" duration=\"57000\" />\r\n      <workItem from=\"1659521574586\" duration=\"3000\" />\r\n      <workItem from=\"1659578571854\" duration=\"2253000\" />\r\n      <workItem from=\"1659586905750\" duration=\"1091000\" />\r\n      <workItem from=\"1659596719255\" duration=\"2139000\" />\r\n      <workItem from=\"1659601574829\" duration=\"9497000\" />\r\n      <workItem from=\"1659615781495\" duration=\"1872000\" />\r\n      <workItem from=\"1659618991326\" duration=\"2212000\" />\r\n      <workItem from=\"1659621221060\" duration=\"222000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"Changes\">\r\n      <created>1659617573368</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1659617573368</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"Changes\">\r\n      <created>1659620858320</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1659620858320</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"Changes\">\r\n      <created>1659621178782</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1659621178782</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"Changes\">\r\n      <created>1659621426816</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1659621426816</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"5\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"Changes\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"Changes\" />\r\n  </component>\r\n  <component name=\"XSLT-Support.FileAssociations.UIState\">\r\n    <expand />\r\n    <select />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 8efdcaca528b7a440c8283b0473f4aab1620eda2)
++++ b/.idea/workspace.xml	(date 1659675651303)
+@@ -7,7 +7,20 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="ec1299b6-fbc9-4657-9f93-74fe9eb13faf" name="Changes" comment="Changes" />
++    <list default="true" id="ec1299b6-fbc9-4657-9f93-74fe9eb13faf" name="Changes" comment="Changes">
++      <change afterPath="$PROJECT_DIR$/spring-transaction/src/main/resources/tx-xml.xml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/spring-transaction/src/test/java/com/atguigu/spring/test/TxByXMLTest.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/spring-transaction/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/spring-transaction/pom.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/spring-transaction/src/main/java/com/atguigu/spring/Controller/BookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-transaction/src/main/java/com/atguigu/spring/Controller/BookController.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/spring-transaction/src/main/java/com/atguigu/spring/service/CheckoutService.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-transaction/src/main/java/com/atguigu/spring/service/CheckoutService.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/spring-transaction/src/main/java/com/atguigu/spring/service/impl/BookServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-transaction/src/main/java/com/atguigu/spring/service/impl/BookServiceImpl.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/spring-transaction/src/main/java/com/atguigu/spring/service/impl/CheckoutServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-transaction/src/main/java/com/atguigu/spring/service/impl/CheckoutServiceImpl.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/spring-transaction/src/test/java/com/atguigu/spring/test/TxByAnnotationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-transaction/src/test/java/com/atguigu/spring/test/TxByAnnotationTest.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/spring-transaction/target/classes/com/atguigu/spring/Controller/BookController.class" beforeDir="false" afterPath="$PROJECT_DIR$/spring-transaction/target/classes/com/atguigu/spring/Controller/BookController.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/spring-transaction/target/classes/com/atguigu/spring/service/impl/BookServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/spring-transaction/target/classes/com/atguigu/spring/service/impl/BookServiceImpl.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/spring-transaction/target/test-classes/com/atguigu/spring/test/TxByAnnotationTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/spring-transaction/target/test-classes/com/atguigu/spring/test/TxByAnnotationTest.class" afterDir="false" />
++    </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+@@ -72,19 +85,22 @@
+     <option name="showLibraryContents" value="true" />
+     <option name="showMembers" value="true" />
+   </component>
+-  <component name="PropertiesComponent">{
+-  &quot;keyToString&quot;: {
+-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;1.8&quot;,
+-    &quot;last_opened_file_path&quot;: &quot;D:/IDEA workspace/SSM&quot;,
+-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+-    &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Mercurial&quot;,
+-    &quot;spring.configuration.checksum&quot;: &quot;61adab9dd226dedab15411bfd7a093ba&quot;
++  <component name="PropertiesComponent"><![CDATA[{
++  "keyToString": {
++    "WebServerToolWindowFactoryState": "false",
++    "jdk.selected.JAVA_MODULE": "1.8",
++    "last_opened_file_path": "D:/IDEA workspace/SSM/spring-transaction/src/main/resources",
++    "node.js.detected.package.eslint": "true",
++    "node.js.detected.package.tslint": "true",
++    "node.js.selected.package.eslint": "(autodetect)",
++    "node.js.selected.package.tslint": "(autodetect)",
++    "project.structure.last.edited": "Project",
++    "project.structure.proportion": "0.0",
++    "project.structure.side.proportion": "0.0",
++    "settings.editor.selected.configurable": "preferences.pluginManager",
++    "spring.configuration.checksum": "61adab9dd226dedab15411bfd7a093ba"
+   }
+-}</component>
++}]]></component>
+   <component name="RecentsManager">
+     <key name="CopyFile.RECENT_KEYS">
+       <recent name="D:\IDEA workspace\SSM\spring-transaction\src\main\resources" />
+@@ -99,12 +115,13 @@
+       <recent name="D:\IDEA workspace\SSM\mybatis_helloworld\src\main\resources" />
+     </key>
+     <key name="CopyClassDialog.RECENTS_KEY">
++      <recent name="com.atguigu.spring.test" />
+       <recent name="com.atguigu.mybatis.utils" />
+       <recent name="com.atguigu.mybatis.pojo" />
+     </key>
+   </component>
+-  <component name="RunManager" selected="JUnit.TxByAnnotationTest.testGetUserById">
+-    <configuration name="TxByAnnotationTest.testGetUserById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
++  <component name="RunManager" selected="JUnit.TxByXMLTest.tesByBook">
++    <configuration name="TxByAnnotationTest.tesByBook" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+       <module name="spring-transaction" />
+       <extension name="coverage">
+         <pattern>
+@@ -114,13 +131,13 @@
+       </extension>
+       <option name="PACKAGE_NAME" value="com.atguigu.spring.test" />
+       <option name="MAIN_CLASS_NAME" value="com.atguigu.spring.test.TxByAnnotationTest" />
+-      <option name="METHOD_NAME" value="testGetUserById" />
++      <option name="METHOD_NAME" value="tesByBook" />
+       <option name="TEST_OBJECT" value="method" />
+       <method v="2">
+         <option name="Make" enabled="true" />
+       </method>
+     </configuration>
+-    <configuration name="jdbcTemplateTest.testGetAllUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
++    <configuration name="TxByAnnotationTest.testGetUserById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+       <module name="spring-transaction" />
+       <extension name="coverage">
+         <pattern>
+@@ -129,14 +146,14 @@
+         </pattern>
+       </extension>
+       <option name="PACKAGE_NAME" value="com.atguigu.spring.test" />
+-      <option name="MAIN_CLASS_NAME" value="com.atguigu.spring.test.jdbcTemplateTest" />
+-      <option name="METHOD_NAME" value="testGetAllUser" />
++      <option name="MAIN_CLASS_NAME" value="com.atguigu.spring.test.TxByAnnotationTest" />
++      <option name="METHOD_NAME" value="testGetUserById" />
+       <option name="TEST_OBJECT" value="method" />
+       <method v="2">
+         <option name="Make" enabled="true" />
+       </method>
+     </configuration>
+-    <configuration name="jdbcTemplateTest.testGetCount" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
++    <configuration name="TxByXMLTest.tesByBook" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+       <module name="spring-transaction" />
+       <extension name="coverage">
+         <pattern>
+@@ -145,14 +162,14 @@
+         </pattern>
+       </extension>
+       <option name="PACKAGE_NAME" value="com.atguigu.spring.test" />
+-      <option name="MAIN_CLASS_NAME" value="com.atguigu.spring.test.jdbcTemplateTest" />
+-      <option name="METHOD_NAME" value="testGetCount" />
++      <option name="MAIN_CLASS_NAME" value="com.atguigu.spring.test.TxByXMLTest" />
++      <option name="METHOD_NAME" value="tesByBook" />
+       <option name="TEST_OBJECT" value="method" />
+       <method v="2">
+         <option name="Make" enabled="true" />
+       </method>
+     </configuration>
+-    <configuration name="jdbcTemplateTest.testGetUserById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
++    <configuration name="jdbcTemplateTest.testGetAllUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+       <module name="spring-transaction" />
+       <extension name="coverage">
+         <pattern>
+@@ -162,13 +179,13 @@
+       </extension>
+       <option name="PACKAGE_NAME" value="com.atguigu.spring.test" />
+       <option name="MAIN_CLASS_NAME" value="com.atguigu.spring.test.jdbcTemplateTest" />
+-      <option name="METHOD_NAME" value="testGetUserById" />
++      <option name="METHOD_NAME" value="testGetAllUser" />
+       <option name="TEST_OBJECT" value="method" />
+       <method v="2">
+         <option name="Make" enabled="true" />
+       </method>
+     </configuration>
+-    <configuration name="jdbcTemplateTest.testInsert" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
++    <configuration name="jdbcTemplateTest.testGetCount" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+       <module name="spring-transaction" />
+       <extension name="coverage">
+         <pattern>
+@@ -178,7 +195,7 @@
+       </extension>
+       <option name="PACKAGE_NAME" value="com.atguigu.spring.test" />
+       <option name="MAIN_CLASS_NAME" value="com.atguigu.spring.test.jdbcTemplateTest" />
+-      <option name="METHOD_NAME" value="testInsert" />
++      <option name="METHOD_NAME" value="testGetCount" />
+       <option name="TEST_OBJECT" value="method" />
+       <method v="2">
+         <option name="Make" enabled="true" />
+@@ -186,11 +203,11 @@
+     </configuration>
+     <recent_temporary>
+       <list>
++        <item itemvalue="JUnit.TxByXMLTest.tesByBook" />
++        <item itemvalue="JUnit.TxByAnnotationTest.tesByBook" />
+         <item itemvalue="JUnit.TxByAnnotationTest.testGetUserById" />
+         <item itemvalue="JUnit.jdbcTemplateTest.testGetCount" />
+         <item itemvalue="JUnit.jdbcTemplateTest.testGetAllUser" />
+-        <item itemvalue="JUnit.jdbcTemplateTest.testGetUserById" />
+-        <item itemvalue="JUnit.jdbcTemplateTest.testInsert" />
+       </list>
+     </recent_temporary>
+   </component>
+@@ -270,6 +287,11 @@
+       <workItem from="1659615781495" duration="1872000" />
+       <workItem from="1659618991326" duration="2212000" />
+       <workItem from="1659621221060" duration="222000" />
++      <workItem from="1659621694319" duration="336000" />
++      <workItem from="1659623329856" duration="1170000" />
++      <workItem from="1659626011779" duration="47000" />
++      <workItem from="1659626078200" duration="131000" />
++      <workItem from="1659673415525" duration="2235000" />
+     </task>
+     <task id="LOCAL-00001" summary="Changes">
+       <created>1659617573368</created>
+@@ -299,7 +321,14 @@
+       <option name="project" value="LOCAL" />
+       <updated>1659621426816</updated>
+     </task>
+-    <option name="localTasksCounter" value="5" />
++    <task id="LOCAL-00005" summary="Changes">
++      <created>1659621711048</created>
++      <option name="number" value="00005" />
++      <option name="presentableId" value="LOCAL-00005" />
++      <option name="project" value="LOCAL" />
++      <updated>1659621711048</updated>
++    </task>
++    <option name="localTasksCounter" value="6" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+Index: spring-transaction/src/main/java/com/atguigu/spring/Controller/BookController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.atguigu.spring.Controller;\r\n\r\nimport com.atguigu.spring.dao.BookDao;\r\nimport com.atguigu.spring.service.BookService;\r\nimport org.springframework.beans.factory.annotation.Autowired;\r\nimport org.springframework.stereotype.Controller;\r\n\r\n/**\r\n * @author: MC\r\n * @program: SSM\r\n * @create: 2022-08-04 16:36\r\n * @Description:\r\n */\r\n\r\n@Controller\r\npublic class BookController{\r\n\r\n    @Autowired\r\n    private BookService bookService;\r\n\r\n    public void buyBook(Integer userId,Integer bookId){\r\n        bookService.buyBook(userId, bookId);\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/spring-transaction/src/main/java/com/atguigu/spring/Controller/BookController.java b/spring-transaction/src/main/java/com/atguigu/spring/Controller/BookController.java
+--- a/spring-transaction/src/main/java/com/atguigu/spring/Controller/BookController.java	(revision 8efdcaca528b7a440c8283b0473f4aab1620eda2)
++++ b/spring-transaction/src/main/java/com/atguigu/spring/Controller/BookController.java	(date 1659673664736)
+@@ -2,6 +2,7 @@
+ 
+ import com.atguigu.spring.dao.BookDao;
+ import com.atguigu.spring.service.BookService;
++import com.atguigu.spring.service.CheckoutService;
+ import org.springframework.beans.factory.annotation.Autowired;
+ import org.springframework.stereotype.Controller;
+ 
+@@ -18,7 +19,14 @@
+     @Autowired
+     private BookService bookService;
+ 
++    @Autowired
++    private CheckoutService checkoutService;
++
+     public void buyBook(Integer userId,Integer bookId){
+         bookService.buyBook(userId, bookId);
+     }
++
++    public void checkout(Integer userId,Integer [] bookId){
++        checkoutService.checkout(userId, bookId);
++    }
+ }
+\ No newline at end of file
+Index: spring-transaction/pom.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project xmlns=\"http://maven.apache.org/POM/4.0.0\"\r\n         xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\r\n         xsi:schemaLocation=\"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd\">\r\n    <modelVersion>4.0.0</modelVersion>\r\n\r\n    <groupId>com.atguigu.spring</groupId>\r\n    <artifactId>spring-transaction</artifactId>\r\n    <version>1.0-SNAPSHOT</version>\r\n    <packaging>jar</packaging>\r\n\r\n    <properties>\r\n        <maven.compiler.source>8</maven.compiler.source>\r\n        <maven.compiler.target>8</maven.compiler.target>\r\n        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>\r\n    </properties>\r\n\r\n    <dependencies>\r\n        <!-- 基于Maven依赖传递性，导入spring-context依赖即可导入当前所需所有jar包 -->\r\n        <dependency>\r\n            <groupId>org.springframework</groupId>\r\n            <artifactId>spring-context</artifactId>\r\n            <version>5.3.1</version>\r\n        </dependency>\r\n        <!-- Spring 持久化层支持jar包 -->\r\n        <!-- Spring 在执行持久化层操作、与持久化层技术进行整合过程中，需要使用orm、jdbc、tx三个\r\n        jar包 -->\r\n        <!-- 导入 orm 包就可以通过 Maven 的依赖传递性把其他两个也导入 -->\r\n        <dependency>\r\n            <groupId>org.springframework</groupId>\r\n            <artifactId>spring-orm</artifactId>\r\n            <version>5.3.1</version>\r\n        </dependency>\r\n        <!-- Spring 测试相关 -->\r\n        <dependency>\r\n            <groupId>org.springframework</groupId>\r\n            <artifactId>spring-test</artifactId>\r\n            <version>5.3.1</version>\r\n        </dependency>\r\n        <!-- junit测试 -->\r\n        <dependency>\r\n            <groupId>junit</groupId>\r\n            <artifactId>junit</artifactId>\r\n            <version>4.12</version>\r\n            <scope>test</scope>\r\n        </dependency>\r\n        <!-- MySQL驱动 -->\r\n        <dependency>\r\n            <groupId>mysql</groupId>\r\n            <artifactId>mysql-connector-java</artifactId>\r\n            <version>8.0.16</version>\r\n        </dependency>\r\n        <!-- 数据源 -->\r\n        <dependency>\r\n            <groupId>com.alibaba</groupId>\r\n            <artifactId>druid</artifactId>\r\n            <version>1.0.31</version>\r\n        </dependency>\r\n    </dependencies>\r\n\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/spring-transaction/pom.xml b/spring-transaction/pom.xml
+--- a/spring-transaction/pom.xml	(revision 8efdcaca528b7a440c8283b0473f4aab1620eda2)
++++ b/spring-transaction/pom.xml	(date 1659675268817)
+@@ -56,6 +56,12 @@
+             <artifactId>druid</artifactId>
+             <version>1.0.31</version>
+         </dependency>
++
++        <dependency>
++            <groupId>org.springframework</groupId>
++            <artifactId>spring-aspects</artifactId>
++            <version>5.3.1</version>
++        </dependency>
+     </dependencies>
+ 
+ </project>
+\ No newline at end of file
+Index: spring-transaction/src/main/java/com/atguigu/spring/service/impl/BookServiceImpl.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.atguigu.spring.service.impl;\r\n\r\nimport com.atguigu.spring.dao.BookDao;\r\nimport com.atguigu.spring.service.BookService;\r\nimport org.springframework.beans.factory.annotation.Autowired;\r\nimport org.springframework.stereotype.Service;\r\nimport org.springframework.transaction.annotation.Isolation;\r\nimport org.springframework.transaction.annotation.Transactional;\r\n\r\n/**\r\n * @author: MC\r\n * @program: SSM\r\n * @create: 2022-08-04 16:37\r\n * @Description:\r\n */\r\n\r\n@Service\r\npublic class BookServiceImpl implements BookService {\r\n\r\n    @Autowired\r\n    private BookDao bookDao;\r\n\r\n    @Override\r\n    @Transactional(\r\n            // readOnly = true\r\n            // timeout = 3\r\n            // noRollbackFor = ArithmeticException.class\r\n            isolation = Isolation.DEFAULT\r\n    )\r\n    public void buyBook(Integer userId, Integer bookId) {\r\n        /*try {\r\n            TimeUnit.SECONDS.sleep(5);\r\n        } catch (InterruptedException e) {\r\n            e.printStackTrace();\r\n        }*/\r\n\r\n\r\n        // 查询图书的价格\r\n        Integer price = bookDao.getPriceByBoolId(userId, bookId);\r\n\r\n        // 更新图书的库存\r\n        bookDao.updateStock(bookId);\r\n\r\n        // 更新用户的余额\r\n        bookDao.updateBalance(userId,price);\r\n        //System.out.println(1/0);\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/spring-transaction/src/main/java/com/atguigu/spring/service/impl/BookServiceImpl.java b/spring-transaction/src/main/java/com/atguigu/spring/service/impl/BookServiceImpl.java
+--- a/spring-transaction/src/main/java/com/atguigu/spring/service/impl/BookServiceImpl.java	(revision 8efdcaca528b7a440c8283b0473f4aab1620eda2)
++++ b/spring-transaction/src/main/java/com/atguigu/spring/service/impl/BookServiceImpl.java	(date 1659674277413)
+@@ -5,6 +5,7 @@
+ import org.springframework.beans.factory.annotation.Autowired;
+ import org.springframework.stereotype.Service;
+ import org.springframework.transaction.annotation.Isolation;
++import org.springframework.transaction.annotation.Propagation;
+ import org.springframework.transaction.annotation.Transactional;
+ 
+ /**
+@@ -21,12 +22,13 @@
+     private BookDao bookDao;
+ 
+     @Override
+-    @Transactional(
++    /*@Transactional(
+             // readOnly = true
+             // timeout = 3
+             // noRollbackFor = ArithmeticException.class
+-            isolation = Isolation.DEFAULT
+-    )
++            *//*isolation = Isolation.DEFAULT*//*
++            propagation = Propagation.REQUIRES_NEW
++    )*/
+     public void buyBook(Integer userId, Integer bookId) {
+         /*try {
+             TimeUnit.SECONDS.sleep(5);
+Index: spring-transaction/src/main/java/com/atguigu/spring/service/CheckoutService.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.atguigu.spring.service;\r\n\r\npublic interface CheckoutService {\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/spring-transaction/src/main/java/com/atguigu/spring/service/CheckoutService.java b/spring-transaction/src/main/java/com/atguigu/spring/service/CheckoutService.java
+--- a/spring-transaction/src/main/java/com/atguigu/spring/service/CheckoutService.java	(revision 8efdcaca528b7a440c8283b0473f4aab1620eda2)
++++ b/spring-transaction/src/main/java/com/atguigu/spring/service/CheckoutService.java	(date 1659673664702)
+@@ -1,4 +1,10 @@
+ package com.atguigu.spring.service;
+ 
+ public interface CheckoutService {
++
++
++    /*
++    * 结账
++    * */
++    void checkout(Integer userId, Integer[] bookId);
+ }
+Index: spring-transaction/src/main/java/com/atguigu/spring/service/impl/CheckoutServiceImpl.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.atguigu.spring.service.impl;\r\n\r\nimport com.atguigu.spring.service.CheckoutService;\r\nimport org.springframework.stereotype.Service;\r\n\r\n/**\r\n * @author: MC\r\n * @program: SSM\r\n * @create: 2022-08-04 19:01\r\n * @Description:\r\n */\r\n\r\n@Service\r\npublic class CheckoutServiceImpl implements CheckoutService {\r\n\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/spring-transaction/src/main/java/com/atguigu/spring/service/impl/CheckoutServiceImpl.java b/spring-transaction/src/main/java/com/atguigu/spring/service/impl/CheckoutServiceImpl.java
+--- a/spring-transaction/src/main/java/com/atguigu/spring/service/impl/CheckoutServiceImpl.java	(revision 8efdcaca528b7a440c8283b0473f4aab1620eda2)
++++ b/spring-transaction/src/main/java/com/atguigu/spring/service/impl/CheckoutServiceImpl.java	(date 1659674277374)
+@@ -1,7 +1,10 @@
+ package com.atguigu.spring.service.impl;
+ 
++import com.atguigu.spring.service.BookService;
+ import com.atguigu.spring.service.CheckoutService;
++import org.springframework.beans.factory.annotation.Autowired;
+ import org.springframework.stereotype.Service;
++import org.springframework.transaction.annotation.Transactional;
+ 
+ /**
+  * @author: MC
+@@ -13,4 +16,13 @@
+ @Service
+ public class CheckoutServiceImpl implements CheckoutService {
+ 
++    @Autowired
++    private BookService bookService;
++    @Override
++   // @Transactional
++    public void checkout(Integer userId, Integer[] bookIds) {
++        for (Integer bookId : bookIds) {
++            bookService.buyBook(userId,bookId);
++        }
++    }
+ }
+\ No newline at end of file
