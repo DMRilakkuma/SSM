@@ -7,7 +7,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ec1299b6-fbc9-4657-9f93-74fe9eb13faf" name="Changes" comment="Changes" />
+    <list default="true" id="ec1299b6-fbc9-4657-9f93-74fe9eb13faf" name="Changes" comment="Changes">
+      <change afterPath="$PROJECT_DIR$/spring_mvc_helloworld.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring_mvc_helloworld/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring_mvc_helloworld/src/main/java/com/atguigu/controller/HelloController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring_mvc_helloworld/src/main/webapp/WEB-INF/SpringMVC-servlet.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring_mvc_helloworld/src/main/webapp/WEB-INF/templates/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring_mvc_helloworld/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -23,9 +34,10 @@
         <option value="FxmlFile" />
         <option value="mybatis-config" />
         <option value="package.json" />
-        <option value="spring-beans.schema" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="spring-beans.schema" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -71,22 +83,24 @@
     <option name="showLibraryContents" value="true" />
     <option name="showMembers" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;1.8&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/IDEA workspace/SSM/spring-transaction/src/main/resources&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;61adab9dd226dedab15411bfd7a093ba&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "jdk.selected.JAVA_MODULE": "1.8",
+    "last_opened_file_path": "D:/IDEA workspace/SSM/spring-transaction/src/main/resources",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.23103449",
+    "settings.editor.selected.configurable": "preferences.applicationServers",
+    "spring.configuration.checksum": "9610cf33e02720627e12953f199e03a7"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\IDEA workspace\SSM\spring-transaction\src\main\resources" />
@@ -96,6 +110,7 @@
       <recent name="D:\IDEA workspace\SSM\mybatis.cache\src\main\resources" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\IDEA workspace\SSM\spring_mvc_helloworld\src\main\webapp" />
       <recent name="D:\IDEA workspace\SSM\mybatis_dynamicSQL\src\main\resources" />
       <recent name="D:\IDEA workspace\SSM\mybatis_helloworld\src\main\resources\com\atguigu\mybatis\mapper" />
       <recent name="D:\IDEA workspace\SSM\mybatis_helloworld\src\main\resources" />
@@ -106,7 +121,7 @@
       <recent name="com.atguigu.mybatis.pojo" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TxByXMLTest.tesByBook">
+  <component name="RunManager" selected="Tomcat Server.Tomcat 8.0.37">
     <configuration name="TxByAnnotationTest.tesByBook" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="spring-transaction" />
       <extension name="coverage">
@@ -187,6 +202,92 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Tomcat 8.0.37" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.0.37" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment />
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="946f9024-1d4f-479e-b066-1e14825448c9" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="13531" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Profile">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="JUnit.jdbcTemplateTest.testGetAllUser" />
+      <item itemvalue="JUnit.jdbcTemplateTest.testGetCount" />
+      <item itemvalue="JUnit.TxByAnnotationTest.tesByBook" />
+      <item itemvalue="JUnit.TxByAnnotationTest.testGetUserById" />
+      <item itemvalue="JUnit.TxByXMLTest.tesByBook" />
+      <item itemvalue="Tomcat Server.Tomcat 8.0.37" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.TxByXMLTest.tesByBook" />
@@ -278,6 +379,11 @@
       <workItem from="1659626011779" duration="47000" />
       <workItem from="1659626078200" duration="131000" />
       <workItem from="1659673415525" duration="2409000" />
+      <workItem from="1659678157178" duration="237000" />
+      <workItem from="1659678439971" duration="52000" />
+      <workItem from="1659684575219" duration="82000" />
+      <workItem from="1659700260873" duration="3867000" />
+      <workItem from="1659708925782" duration="554000" />
     </task>
     <task id="LOCAL-00001" summary="Changes">
       <created>1659617573368</created>
@@ -321,7 +427,14 @@
       <option name="project" value="LOCAL" />
       <updated>1659675790168</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Changes">
+      <created>1659678192100</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1659678192101</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
