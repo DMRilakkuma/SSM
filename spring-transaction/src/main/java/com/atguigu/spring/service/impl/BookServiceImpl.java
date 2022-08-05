@@ -5,6 +5,7 @@ import com.atguigu.spring.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Isolation;
+import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 /**
@@ -21,12 +22,13 @@ public class BookServiceImpl implements BookService {
     private BookDao bookDao;
 
     @Override
-    @Transactional(
+    /*@Transactional(
             // readOnly = true
             // timeout = 3
             // noRollbackFor = ArithmeticException.class
-            isolation = Isolation.DEFAULT
-    )
+            *//*isolation = Isolation.DEFAULT*//*
+            propagation = Propagation.REQUIRES_NEW
+    )*/
     public void buyBook(Integer userId, Integer bookId) {
         /*try {
             TimeUnit.SECONDS.sleep(5);

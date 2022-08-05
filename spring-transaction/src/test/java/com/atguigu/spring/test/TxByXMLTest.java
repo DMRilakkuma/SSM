@@ -22,8 +22,8 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
  */
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration("classpath:tx-annotation.xml")
-public class TxByAnnotationTest {
+@ContextConfiguration("classpath:tx-xml.xml")
+public class TxByXMLTest{
 
     @Autowired
     private BookController bookController;

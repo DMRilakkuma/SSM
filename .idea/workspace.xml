@@ -7,7 +7,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ec1299b6-fbc9-4657-9f93-74fe9eb13faf" name="Changes" comment="Changes" />
+    <list default="true" id="ec1299b6-fbc9-4657-9f93-74fe9eb13faf" name="Changes" comment="Changes">
+      <change afterPath="$PROJECT_DIR$/spring-transaction/src/main/resources/tx-xml.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-transaction/src/test/java/com/atguigu/spring/test/TxByXMLTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-transaction/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/spring-transaction/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-transaction/src/main/java/com/atguigu/spring/Controller/BookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-transaction/src/main/java/com/atguigu/spring/Controller/BookController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-transaction/src/main/java/com/atguigu/spring/service/CheckoutService.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-transaction/src/main/java/com/atguigu/spring/service/CheckoutService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-transaction/src/main/java/com/atguigu/spring/service/impl/BookServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-transaction/src/main/java/com/atguigu/spring/service/impl/BookServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-transaction/src/main/java/com/atguigu/spring/service/impl/CheckoutServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-transaction/src/main/java/com/atguigu/spring/service/impl/CheckoutServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-transaction/src/test/java/com/atguigu/spring/test/TxByAnnotationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-transaction/src/test/java/com/atguigu/spring/test/TxByAnnotationTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-transaction/target/classes/com/atguigu/spring/Controller/BookController.class" beforeDir="false" afterPath="$PROJECT_DIR$/spring-transaction/target/classes/com/atguigu/spring/Controller/BookController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-transaction/target/classes/com/atguigu/spring/service/impl/BookServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/spring-transaction/target/classes/com/atguigu/spring/service/impl/BookServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-transaction/target/test-classes/com/atguigu/spring/test/TxByAnnotationTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/spring-transaction/target/test-classes/com/atguigu/spring/test/TxByAnnotationTest.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -72,19 +85,22 @@
     <option name="showLibraryContents" value="true" />
     <option name="showMembers" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;1.8&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/IDEA workspace/SSM&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Mercurial&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;61adab9dd226dedab15411bfd7a093ba&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "WebServerToolWindowFactoryState": "false",
+    "jdk.selected.JAVA_MODULE": "1.8",
+    "last_opened_file_path": "D:/IDEA workspace/SSM/spring-transaction/src/main/resources",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "spring.configuration.checksum": "61adab9dd226dedab15411bfd7a093ba"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\IDEA workspace\SSM\spring-transaction\src\main\resources" />
@@ -99,11 +115,28 @@
       <recent name="D:\IDEA workspace\SSM\mybatis_helloworld\src\main\resources" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.atguigu.spring.test" />
       <recent name="com.atguigu.mybatis.utils" />
       <recent name="com.atguigu.mybatis.pojo" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TxByAnnotationTest.testGetUserById">
+  <component name="RunManager" selected="JUnit.TxByXMLTest.tesByBook">
+    <configuration name="TxByAnnotationTest.tesByBook" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="spring-transaction" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.atguigu.spring.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.atguigu.spring.test" />
+      <option name="MAIN_CLASS_NAME" value="com.atguigu.spring.test.TxByAnnotationTest" />
+      <option name="METHOD_NAME" value="tesByBook" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="TxByAnnotationTest.testGetUserById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="spring-transaction" />
       <extension name="coverage">
@@ -115,6 +148,22 @@
       <option name="PACKAGE_NAME" value="com.atguigu.spring.test" />
       <option name="MAIN_CLASS_NAME" value="com.atguigu.spring.test.TxByAnnotationTest" />
       <option name="METHOD_NAME" value="testGetUserById" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TxByXMLTest.tesByBook" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="spring-transaction" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.atguigu.spring.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.atguigu.spring.test" />
+      <option name="MAIN_CLASS_NAME" value="com.atguigu.spring.test.TxByXMLTest" />
+      <option name="METHOD_NAME" value="tesByBook" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -152,45 +201,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="jdbcTemplateTest.testGetUserById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="spring-transaction" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.atguigu.spring.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.atguigu.spring.test" />
-      <option name="MAIN_CLASS_NAME" value="com.atguigu.spring.test.jdbcTemplateTest" />
-      <option name="METHOD_NAME" value="testGetUserById" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="jdbcTemplateTest.testInsert" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="spring-transaction" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.atguigu.spring.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.atguigu.spring.test" />
-      <option name="MAIN_CLASS_NAME" value="com.atguigu.spring.test.jdbcTemplateTest" />
-      <option name="METHOD_NAME" value="testInsert" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TxByXMLTest.tesByBook" />
+        <item itemvalue="JUnit.TxByAnnotationTest.tesByBook" />
         <item itemvalue="JUnit.TxByAnnotationTest.testGetUserById" />
         <item itemvalue="JUnit.jdbcTemplateTest.testGetCount" />
         <item itemvalue="JUnit.jdbcTemplateTest.testGetAllUser" />
-        <item itemvalue="JUnit.jdbcTemplateTest.testGetUserById" />
-        <item itemvalue="JUnit.jdbcTemplateTest.testInsert" />
       </list>
     </recent_temporary>
   </component>
@@ -270,6 +287,11 @@
       <workItem from="1659615781495" duration="1872000" />
       <workItem from="1659618991326" duration="2212000" />
       <workItem from="1659621221060" duration="222000" />
+      <workItem from="1659621694319" duration="336000" />
+      <workItem from="1659623329856" duration="1170000" />
+      <workItem from="1659626011779" duration="47000" />
+      <workItem from="1659626078200" duration="131000" />
+      <workItem from="1659673415525" duration="2235000" />
     </task>
     <task id="LOCAL-00001" summary="Changes">
       <created>1659617573368</created>
@@ -299,7 +321,14 @@
       <option name="project" value="LOCAL" />
       <updated>1659621426816</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Changes">
+      <created>1659621711048</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1659621711048</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
