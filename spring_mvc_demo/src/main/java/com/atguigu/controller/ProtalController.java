@@ -6,21 +6,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 /**
  * @author: MC
  * @program: SSM
- * @create: 2022-08-05 20:36
+ * @create: 2022-08-06 14:12
  * @Description:
  */
 
 @Controller
-public class HelloController {
+public class ProtalController {
 
     @RequestMapping("/")
     public String protal() {
-        // 将逻辑视图返回
         return "index";
     }
 
-    @RequestMapping("/hello")
-    public String hello() {
-        return "success";
-    }
 }
