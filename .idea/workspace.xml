@@ -13,9 +13,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ec1299b6-fbc9-4657-9f93-74fe9eb13faf" name="Changes" comment="Changes">
+      <change afterPath="$PROJECT_DIR$/spring_mvc_demo/src/main/java/com/atguigu/controller/TestScopeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring_mvc_demo/src/main/java/com/atguigu/pojo/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring_mvc_demo/src/main/java/com/atguigu/controller/TestParamController.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring_mvc_demo/src/main/java/com/atguigu/controller/TestParamController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring_mvc_demo/src/main/java/com/atguigu/controller/TestRequestMappingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring_mvc_demo/src/main/java/com/atguigu/controller/TestRequestMappingController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring_mvc_demo/src/main/webapp/WEB-INF/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/spring_mvc_demo/src/main/webapp/WEB-INF/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring_mvc_demo/src/main/webapp/WEB-INF/templates/success.html" beforeDir="false" afterPath="$PROJECT_DIR$/spring_mvc_demo/src/main/webapp/WEB-INF/templates/success.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring_mvc_demo/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/spring_mvc_demo/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring_mvc_demo/target/classes/com/atguigu/controller/TestParamController.class" beforeDir="false" afterPath="$PROJECT_DIR$/spring_mvc_demo/target/classes/com/atguigu/controller/TestParamController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/spring_mvc_demo/target/classes/com/atguigu/controller/TestRequestMappingController.class" beforeDir="false" afterPath="$PROJECT_DIR$/spring_mvc_demo/target/classes/com/atguigu/controller/TestRequestMappingController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring_mvc_demo/target/spring_mvc_demo-1.0-SNAPSHOT/WEB-INF/classes/com/atguigu/controller/TestParamController.class" beforeDir="false" afterPath="$PROJECT_DIR$/spring_mvc_demo/target/spring_mvc_demo-1.0-SNAPSHOT/WEB-INF/classes/com/atguigu/controller/TestParamController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/spring_mvc_demo/target/spring_mvc_demo-1.0-SNAPSHOT/WEB-INF/classes/com/atguigu/controller/TestRequestMappingController.class" beforeDir="false" afterPath="$PROJECT_DIR$/spring_mvc_demo/target/spring_mvc_demo-1.0-SNAPSHOT/WEB-INF/classes/com/atguigu/controller/TestRequestMappingController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring_mvc_demo/target/spring_mvc_demo-1.0-SNAPSHOT/WEB-INF/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/spring_mvc_demo/target/spring_mvc_demo-1.0-SNAPSHOT/WEB-INF/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring_mvc_demo/target/spring_mvc_demo-1.0-SNAPSHOT/WEB-INF/templates/success.html" beforeDir="false" afterPath="$PROJECT_DIR$/spring_mvc_demo/target/spring_mvc_demo-1.0-SNAPSHOT/WEB-INF/templates/success.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring_mvc_demo/target/spring_mvc_demo-1.0-SNAPSHOT/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/spring_mvc_demo/target/spring_mvc_demo-1.0-SNAPSHOT/WEB-INF/web.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,7 +142,7 @@
       <recent name="com.atguigu.mybatis.pojo" />
     </key>
   </component>
-  <component name="RunManager" selected="Tomcat Server.Tomcat 8.0.37">
+  <component name="RunManager" selected="Tomcat Server.SpringMVC">
     <configuration name="TxByAnnotationTest.tesByBook" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="spring-transaction" />
       <extension name="coverage">
@@ -211,7 +223,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Tomcat 8.0.37" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.0.37" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+    <configuration name="SpringMVC" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.0.37" ALTERNATIVE_JRE_ENABLED="false">
       <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
       <option name="UPDATE_CLASSES_ON_FRAME_DEACTIVATION" value="true" />
       <option name="SHOW_DIALOG_ON_UPDATE" value="false" />
@@ -225,6 +237,7 @@
       </deployment>
       <server-settings>
         <option name="BASE_DIRECTORY_NAME" value="8e0534b2-612b-418c-ae76-070ed951a94f" />
+        <option name="PRESERVE_SESSIONS" value="true" />
       </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
@@ -307,7 +320,7 @@
       <item itemvalue="JUnit.TxByAnnotationTest.tesByBook" />
       <item itemvalue="JUnit.TxByAnnotationTest.testGetUserById" />
       <item itemvalue="JUnit.TxByXMLTest.tesByBook" />
-      <item itemvalue="Tomcat Server.Tomcat 8.0.37" />
+      <item itemvalue="Tomcat Server.SpringMVC" />
     </list>
     <recent_temporary>
       <list>
@@ -413,6 +426,9 @@
       <workItem from="1659865498426" duration="144000" />
       <workItem from="1659924370395" duration="4581000" />
       <workItem from="1659941919445" duration="2436000" />
+      <workItem from="1659958053107" duration="5234000" />
+      <workItem from="1659964742700" duration="1975000" />
+      <workItem from="1659967862243" duration="2294000" />
     </task>
     <task id="LOCAL-00001" summary="Changes">
       <created>1659617573368</created>
@@ -498,7 +514,14 @@
       <option name="project" value="LOCAL" />
       <updated>1659943145675</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Changes">
+      <created>1659958067930</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1659958067930</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
