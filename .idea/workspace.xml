@@ -13,21 +13,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ec1299b6-fbc9-4657-9f93-74fe9eb13faf" name="Changes" comment="Changes">
-      <change afterPath="$PROJECT_DIR$/spring_mvc_demo/src/main/java/com/atguigu/controller/TestScopeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring_mvc_demo/src/main/java/com/atguigu/pojo/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring_mvc_demo/src/main/java/com/atguigu/controller/TestViewController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring_mvc_demo/src/main/java/com/atguigu/controller/TestParamController.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring_mvc_demo/src/main/java/com/atguigu/controller/TestParamController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring_mvc_demo/src/main/java/com/atguigu/controller/TestRequestMappingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring_mvc_demo/src/main/java/com/atguigu/controller/TestRequestMappingController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring_mvc_demo/src/main/resources/springmvc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/spring_mvc_demo/src/main/resources/springmvc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/spring_mvc_demo/src/main/webapp/WEB-INF/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/spring_mvc_demo/src/main/webapp/WEB-INF/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring_mvc_demo/src/main/webapp/WEB-INF/templates/success.html" beforeDir="false" afterPath="$PROJECT_DIR$/spring_mvc_demo/src/main/webapp/WEB-INF/templates/success.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring_mvc_demo/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/spring_mvc_demo/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring_mvc_demo/target/classes/com/atguigu/controller/TestParamController.class" beforeDir="false" afterPath="$PROJECT_DIR$/spring_mvc_demo/target/classes/com/atguigu/controller/TestParamController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring_mvc_demo/target/classes/com/atguigu/controller/TestRequestMappingController.class" beforeDir="false" afterPath="$PROJECT_DIR$/spring_mvc_demo/target/classes/com/atguigu/controller/TestRequestMappingController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring_mvc_demo/target/spring_mvc_demo-1.0-SNAPSHOT/WEB-INF/classes/com/atguigu/controller/TestParamController.class" beforeDir="false" afterPath="$PROJECT_DIR$/spring_mvc_demo/target/spring_mvc_demo-1.0-SNAPSHOT/WEB-INF/classes/com/atguigu/controller/TestParamController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring_mvc_demo/target/spring_mvc_demo-1.0-SNAPSHOT/WEB-INF/classes/com/atguigu/controller/TestRequestMappingController.class" beforeDir="false" afterPath="$PROJECT_DIR$/spring_mvc_demo/target/spring_mvc_demo-1.0-SNAPSHOT/WEB-INF/classes/com/atguigu/controller/TestRequestMappingController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/spring_mvc_demo/target/spring_mvc_demo-1.0-SNAPSHOT/WEB-INF/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/spring_mvc_demo/target/spring_mvc_demo-1.0-SNAPSHOT/WEB-INF/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring_mvc_demo/target/spring_mvc_demo-1.0-SNAPSHOT/WEB-INF/templates/success.html" beforeDir="false" afterPath="$PROJECT_DIR$/spring_mvc_demo/target/spring_mvc_demo-1.0-SNAPSHOT/WEB-INF/templates/success.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring_mvc_demo/target/spring_mvc_demo-1.0-SNAPSHOT/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/spring_mvc_demo/target/spring_mvc_demo-1.0-SNAPSHOT/WEB-INF/web.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,6 +104,7 @@
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.23103449&quot;,
@@ -428,7 +419,11 @@
       <workItem from="1659941919445" duration="2436000" />
       <workItem from="1659958053107" duration="5234000" />
       <workItem from="1659964742700" duration="1975000" />
-      <workItem from="1659967862243" duration="2294000" />
+      <workItem from="1659967862243" duration="2707000" />
+      <workItem from="1660004641193" duration="657000" />
+      <workItem from="1660018814848" duration="676000" />
+      <workItem from="1660028580284" duration="2963000" />
+      <workItem from="1660045472362" duration="2250000" />
     </task>
     <task id="LOCAL-00001" summary="Changes">
       <created>1659617573368</created>
@@ -521,7 +516,21 @@
       <option name="project" value="LOCAL" />
       <updated>1659958067930</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Changes">
+      <created>1659970452913</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1659970452913</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Changes">
+      <created>1659970457645</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1659970457645</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -541,6 +550,27 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Changes" />
     <option name="LAST_COMMIT_MESSAGE" value="Changes" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/spring_mvc_demo/src/main/java/com/atguigu/controller/TestViewController.java</url>
+          <line>16</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/spring_mvc_demo/src/main/java/com/atguigu/controller/TestViewController.java</url>
+          <line>21</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/spring_mvc_demo/src/main/java/com/atguigu/controller/TestViewController.java</url>
+          <line>26</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
