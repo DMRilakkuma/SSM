@@ -35,11 +35,17 @@
         </property>
     </bean>
 
+    <!--配置默认的servlet处理静态资源
+        因为当前工程web.xml配置的前端控制器DispatcherServlet的url-pattern是/
+        tomcat的web.xml配置的defaultServlet
+    -->
+    <mvc:default-servlet-handler/>
+
     <mvc:annotation-driven/>
     <!--视图控制器:为当前的请求直接设置视图名称实现页面跳转-->
     <!--诺设置视图控制器,则只有视图控制器所设置的请求会被处理,其他请求将全部404
     此时必须在配置一个标签: <mvc:annotation-driven/>
     -->
-    <mvc:view-controller path="/" view-name="index"></mvc:view-controller>
+    <mvc:view-controller path="/" view-name="index"/>
 
 </beans>

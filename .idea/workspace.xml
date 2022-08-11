@@ -5,7 +5,7 @@
   </component>
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="spring_mvc_demo:war exploded" />
+      <artifact name="spring_mvc_ajax:war exploded" />
     </artifacts-to-build>
   </component>
   <component name="AutoImportSettings">
@@ -13,11 +13,56 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ec1299b6-fbc9-4657-9f93-74fe9eb13faf" name="Changes" comment="Changes">
-      <change afterPath="$PROJECT_DIR$/spring_mvc_demo/src/main/java/com/atguigu/controller/TestViewController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/Spring_mvc_rest_Web_exploded.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Spring-mvc-rest/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Spring-mvc-rest/src/main/java/com/atguigu/controller/EmployeeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Spring-mvc-rest/src/main/java/com/atguigu/controller/TestRestController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Spring-mvc-rest/src/main/java/com/atguigu/dao/EmployeeDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Spring-mvc-rest/src/main/java/com/atguigu/pojo/Employee.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Spring-mvc-rest/src/main/resources/springmvc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Spring-mvc-rest/src/main/webapp/WEB-INF/templates/employee_add.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Spring-mvc-rest/src/main/webapp/WEB-INF/templates/employee_list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Spring-mvc-rest/src/main/webapp/WEB-INF/templates/employee_update.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Spring-mvc-rest/src/main/webapp/WEB-INF/templates/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Spring-mvc-rest/src/main/webapp/WEB-INF/templates/success.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Spring-mvc-rest/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Spring-mvc-rest/src/main/webapp/static/css/img/a.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Spring-mvc-rest/src/main/webapp/static/css/img/body.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Spring-mvc-rest/src/main/webapp/static/css/img/body1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Spring-mvc-rest/src/main/webapp/static/css/img/sea.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Spring-mvc-rest/src/main/webapp/static/css/img/zebratable.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Spring-mvc-rest/src/main/webapp/static/css/img/表.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Spring-mvc-rest/src/main/webapp/static/css/index_like.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Spring-mvc-rest/src/main/webapp/static/css/index_work.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Spring-mvc-rest/src/main/webapp/static/css/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Spring-mvc-rest/src/main/webapp/static/js/axios.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Spring-mvc-rest/src/main/webapp/static/js/jquery-1.8.2.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Spring-mvc-rest/src/main/webapp/static/js/vue.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring_mvc_ajax/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring_mvc_ajax/spring_mvc_ajax.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring_mvc_ajax/src/main/java/com/atguigu/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring_mvc_ajax/src/main/java/com/atguigu/controller/FileUpAndDownController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring_mvc_ajax/src/main/java/com/atguigu/controller/TestAjaxController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring_mvc_ajax/src/main/java/com/atguigu/pojo/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring_mvc_ajax/src/main/resources/springmvc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring_mvc_ajax/src/main/webapp/WEB-INF/templates/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring_mvc_ajax/src/main/webapp/WEB-INF/templates/success.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring_mvc_ajax/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring_mvc_ajax/src/main/webapp/img/1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring_mvc_ajax/src/main/webapp/js/axios.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring_mvc_ajax/src/main/webapp/js/jquery-1.8.2.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring_mvc_ajax/src/main/webapp/js/vue.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring_mvc_demo/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/spring_mvc_demo/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring_mvc_demo/src/main/java/com/atguigu/controller/ProtalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring_mvc_demo/src/main/java/com/atguigu/controller/ProtalController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/spring_mvc_demo/src/main/resources/springmvc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/spring_mvc_demo/src/main/resources/springmvc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring_mvc_demo/src/main/webapp/WEB-INF/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/spring_mvc_demo/src/main/webapp/WEB-INF/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring_mvc_demo/target/spring_mvc_demo-1.0-SNAPSHOT/WEB-INF/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/spring_mvc_demo/target/spring_mvc_demo-1.0-SNAPSHOT/WEB-INF/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring_mvc_demo/target/classes/springmvc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring_mvc_demo/target/spring_mvc_demo-1.0-SNAPSHOT/WEB-INF/classes/springmvc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/spring_mvc_demo/target/spring_mvc_demo-1.0-SNAPSHOT/WEB-INF/classes/springmvc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring_mvc_helloworld.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Spring-mvc-rest.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,6 +112,7 @@
       <MavenGeneralSettings>
         <option name="localRepository" value="D:\Server\maven\apache-maven-3.8.6\repository" />
         <option name="mavenHome" value="$PROJECT_DIR$/../../Server/maven/apache-maven-3.8.6" />
+        <option name="useMavenConfig" value="true" />
         <option name="userSettingsFile" value="D:\Server\maven\apache-maven-3.8.6\conf\settings.xml" />
       </MavenGeneralSettings>
     </option>
@@ -99,7 +145,7 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;1.8&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/IDEA workspace/SSM/spring_mvc_demo/src/main/resources&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/IDEA workspace/SSM/spring_mvc_ajax/src/main/webapp&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -107,19 +153,19 @@
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.23103449&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;a042d36e2410db9ca94ae19c56b125ed&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.3275862&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;spring&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;be89b52dafe935b8220808e47841a4cc&quot;,
     &quot;zielu.gittoolbox.prj.config.selected.tab.id&quot;: &quot;zielu.gittoolbox.config.shared.commit&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\IDEA workspace\SSM\spring_mvc_demo\src\main\resources" />
-      <recent name="D:\IDEA workspace\SSM\spring-transaction\src\main\resources" />
-      <recent name="D:\IDEA workspace\SSM\spring-aop\src\main\java\com\atguigu\spring\aop\xml" />
-      <recent name="D:\IDEA workspace\SSM\spring-aop\src\main\java\com\atguigu\spring\aop" />
-      <recent name="D:\IDEA workspace\SSM\mybatis_mbg\src\main\resources" />
+      <recent name="D:\IDEA workspace\SSM\spring_mvc_ajax\src\main\webapp" />
+      <recent name="D:\IDEA workspace\SSM\spring_mvc_ajax\src\main\resources" />
+      <recent name="D:\IDEA workspace\SSM\Spring-mvc-rest\src\main\webapp\WEB-INF\templates" />
+      <recent name="D:\IDEA workspace\SSM\Spring-mvc-rest\src\main\webapp" />
+      <recent name="D:\IDEA workspace\SSM\Spring-mvc-rest\src\main\webapp\WEB-INF" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\IDEA workspace\SSM\spring_mvc_helloworld\src\main\webapp" />
@@ -220,7 +266,7 @@
       <option name="SHOW_DIALOG_ON_UPDATE" value="false" />
       <option name="UPDATING_POLICY" value="redeploy-artifacts" />
       <deployment>
-        <artifact name="spring_mvc_demo:war exploded">
+        <artifact name="spring_mvc_ajax:war exploded">
           <settings>
             <option name="CONTEXT_PATH" value="/SpringMVC" />
           </settings>
@@ -301,7 +347,7 @@
       <method v="2">
         <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
-          <artifact name="spring_mvc_demo:war exploded" />
+          <artifact name="spring_mvc_ajax:war exploded" />
         </option>
       </method>
     </configuration>
@@ -324,6 +370,9 @@
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SpringGeneralSettings">
+    <option name="allowAutoConfigurationMode" value="true" />
+  </component>
   <component name="SvnConfiguration">
     <configuration>C:\Users\MC\AppData\Roaming\Subversion</configuration>
   </component>
@@ -423,7 +472,20 @@
       <workItem from="1660004641193" duration="657000" />
       <workItem from="1660018814848" duration="676000" />
       <workItem from="1660028580284" duration="2963000" />
-      <workItem from="1660045472362" duration="2250000" />
+      <workItem from="1660045472362" duration="4051000" />
+      <workItem from="1660054327308" duration="1840000" />
+      <workItem from="1660056186230" duration="2323000" />
+      <workItem from="1660092699326" duration="667000" />
+      <workItem from="1660097066358" duration="1792000" />
+      <workItem from="1660105286441" duration="490000" />
+      <workItem from="1660115413348" duration="1842000" />
+      <workItem from="1660129861486" duration="6225000" />
+      <workItem from="1660141129216" duration="2162000" />
+      <workItem from="1660191576103" duration="1275000" />
+      <workItem from="1660202098589" duration="3516000" />
+      <workItem from="1660213505998" duration="42000" />
+      <workItem from="1660213933808" duration="5987000" />
+      <workItem from="1660224363457" duration="4246000" />
     </task>
     <task id="LOCAL-00001" summary="Changes">
       <created>1659617573368</created>
@@ -530,7 +592,21 @@
       <option name="project" value="LOCAL" />
       <updated>1659970457645</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Changes">
+      <created>1660047995946</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1660047995946</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Changes">
+      <created>1660047999775</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1660047999775</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

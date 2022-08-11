@@ -7,8 +7,8 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="spring-proxy" />
-        <module name="spring_mvc_demo" />
         <module name="mybatis_helloworld" />
+        <module name="spring_mvc_ajax" />
         <module name="mybatis.cache" />
         <module name="spring_mvc_helloworld" />
         <module name="spring_hellword" />
@@ -20,9 +20,12 @@
         <module name="mybatis-resultMap" />
         <module name="spring_ioc_xml" />
         <module name="spring_ioc_annotation" />
+        <module name="Spring-mvc-rest" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="spring_mvc_rest" target="1.8" />
+      <module name="Spring_mvc_rest" target="1.8" />
       <module name="untitled" target="1.8" />
     </bytecodeTargetLevel>
   </component>
