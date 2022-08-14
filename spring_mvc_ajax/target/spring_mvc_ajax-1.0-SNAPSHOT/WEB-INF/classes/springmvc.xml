@@ -48,4 +48,8 @@
     -->
     <mvc:view-controller path="/" view-name="index"/>
 
+    <!--配置文件上传解析器-->
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver"/>
+
+
 </beans>

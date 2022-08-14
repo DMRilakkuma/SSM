@@ -6,25 +6,54 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpSession;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
+import java.util.UUID;
 
 /**
  * @author: MC
  * @program: SSM
  * @create: 2022-08-11 22:34
- * @Description:
- *
- * ResponseEntity:可以作为控制器方法的返回值，表示响应到浏览器的完整的响应报文
+ * @Description: ResponseEntity:可以作为控制器方法的返回值，表示响应到浏览器的完整的响应报文
+ * <p>
+ * 文件上传的要求:
+ * 1.form表单的请求方式必须为post
+ * 2.form表单必须设置属性 enctype="multipart/form-data"
  */
 
 @Controller
 public class FileUpAndDownController {
+
+
+    @RequestMapping("/test/up")
+
+    public String testUp(MultipartFile photo, HttpSession session) throws IOException {
+        // 获取上传的文件的文件名
+        String fileName = photo.getOriginalFilename();
+        // 获取上传文件的后缀名
+        String hzName = fileName.substring(fileName.lastIndexOf('.'));
+        // 获取uuid
+        String uuid = UUID.randomUUID().toString();
+        // 拼接一个新的文件名
+        fileName = uuid + hzName;
+        // 获取ServletContext对象
+        ServletContext servletContext = session.getServletContext();
+        // 获取当前工程下photo目录的真实路径
+        String photoPath = servletContext.getRealPath("photo");
+        // 创建photoPath所对应的file对象
+        File file = new File(photoPath);
+        // 判断file所在目录是否存在
+        if (!file.exists()) {
+            file.mkdirs();
+        }
+        String finalpath = photoPath + File.separator + fileName;
+        // 上传文件
+        photo.transferTo(new File(finalpath));
+        return "success";
+    }
 
     @RequestMapping("/test/down")
     public ResponseEntity<byte[]> testResponseEntity(HttpSession session) throws IOException {

@@ -3,10 +3,15 @@
   <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="web" url="file://$PROJECT_DIR$/Spring-mvc-rest" />
+    <file type="web" url="file://$PROJECT_DIR$/spring-ssm" />
+    <file type="web" url="file://$PROJECT_DIR$/spring_listener" />
+    <file type="web" url="file://$PROJECT_DIR$/spring_mvc-extension" />
     <file type="web" url="file://$PROJECT_DIR$/spring_mvc_ajax" />
+    <file type="web" url="file://$PROJECT_DIR$/spring_mvc_annotation" />
     <file type="web" url="file://$PROJECT_DIR$/spring_mvc_demo" />
     <file type="web" url="file://$PROJECT_DIR$/spring_mvc_helloworld" />
     <file type="web" url="file://$PROJECT_DIR$/Spring_mvc_rest" />
+    <file type="web" url="file://$PROJECT_DIR$/ssm" />
   </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
@@ -29,6 +34,13 @@
         <option value="$PROJECT_DIR$/Spring_mvc_rest/pom.xml" />
         <option value="$PROJECT_DIR$/Spring-mvc-rest/pom.xml" />
         <option value="$PROJECT_DIR$/spring_mvc_ajax/pom.xml" />
+        <option value="$PROJECT_DIR$/spring_mvc-extension/pom.xml" />
+        <option value="$PROJECT_DIR$/spring_mvc_annotation/pom.xml" />
+        <option value="$PROJECT_DIR$/spring_listener/pom.xml" />
+        <option value="$PROJECT_DIR$/ssm/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-ssm/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-helloworld/pom.xml" />
+        <option value="$PROJECT_DIR$/mayikt-thymeleaf/pom.xml" />
       </list>
     </option>
   </component>
